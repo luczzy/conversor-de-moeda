@@ -1,81 +1,156 @@
+/* Reset de estilo */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
- 
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
- 
-main {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+
+/* Animação de entrada para o contêiner */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
- 
-h1 {
-    margin-bottom: 20px;
-    color: #333;
+
+/* Contêiner principal */
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out; /* Aplica animação de entrada */
 }
- 
-form {
-    display: flex;
-    flex-direction: column;
+
+/* Cabeçalho */
+.header h1 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
 }
- 
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
+
+/* Grupos de entradas e seleção */
+.input-group, .select-group, .button-group, .button-Reset {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
- 
-label {
-    margin-bottom: 5px;
-    color: #555;
-    font-size: 14px;
+
+.currency-input {
+  display: flex;
+  align-items: center;
 }
- 
-input, select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 100%;
+
+.currency-input span {
+  font-size: 1.2rem;
+  margin-right: 5px;
 }
- 
+
+.currency-input input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease; /* Transição para o foco */
+}
+
+/* Animação ao focar em input e select */
+.currency-input input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #007BFF;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+  transition: box-shadow 0.3s ease; /* Transição para o foco */
+}
+
+/* Botões */
 button {
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s ease;
 }
- 
-button:hover {
-    background-color: #0056b3;
+
+#convertButton {
+  background-color: #007BFF;
+  color: #fff;
 }
- 
+
+#convertButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+#ResetButton {
+  background-color: #ddd;
+  color: #333;
+}
+
+#ResetButton:hover {
+  background-color: #bbb;
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+/* Resultado da conversão */
 #conversao {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #007bff;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
 }
- 
-@media (max-width: 400px) {
-    main {
-        padding: 15px;
-    }
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 600px) {
+  .container {
+      padding: 15px;
+  }
+  
+  .header h1 {
+      font-size: 1.5rem;
+  }
+  
+  button, input, select {
+      font-size: 0.9rem;
+      padding: 8px;
+  }
+
+  /* Botões empilhados em telas menores */
+  .button-group, .button-Reset {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .button-group button, .button-Reset button {
+      width: 100%;
+      margin-bottom: 10px;
+  }
 }
