@@ -1,13 +1,13 @@
 # **Projeto de Conversor de moedas simples**
 
 ## **Objetivo**
-### O objetivo deste projeto é desenvolver um projeto simples para conversão de moedas utilizando linguagens básicas de programação.
+O objetivo deste projeto é desenvolver um projeto simples para conversão de moedas utilizando linguagens básicas de programação.
 
 ## **Preview**
 ![Preview](/img/conversor.gif)
 
 ## **Funcionalidades**
-### O conversor permite que o usuário escolha a moeda de origem e a moeda de destino, insira um valor e receba o resultado convertido em tempo real. Ele também realiza a atualização automática do símbolo da moeda ao escolher uma nova moeda de origem.
+O conversor permite que o usuário escolha a moeda de origem e a moeda de destino, insira um valor e receba o resultado convertido em tempo real. Ele também realiza a atualização automática do símbolo da moeda ao escolher uma nova moeda de origem.
 
 ## **Estrutura do código**
 
@@ -71,7 +71,7 @@ conversao.textContent = `Resultado: ${valorConvertido.toFixed(2)} ${toCurrency}`
 ```
 ---------------------------------------------------------------------------------------------------------------
 
-``Evento do Botão "Reset":``Este evento é acionado ao clicar no botão "Reset", elel impa o conteúdo do campo conversao, removendo o resultado da última conversão exibida.
+``Evento do Botão "Reset":``Este evento é acionado ao clicar no botão "Reset", ele limpa o conteúdo do campo conversão, removendo o resultado da última conversão exibida.
 
 - ``Exemplo:``
 ```js
@@ -80,11 +80,10 @@ document.getElementById('ResetButton').addEventListener('click', function () {
 document.getElementById('conversao').textContent = ''; // Limpa o campo de resultado
 });
 ```
-
-## Autores
-Deivid Marques
-
 ## Tecnologias Utilizadas
 HTML5<br>
 CSS3<br>
 JS
+
+## Autores
+Deivid Marques
